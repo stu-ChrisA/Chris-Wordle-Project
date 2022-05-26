@@ -43,6 +43,13 @@ public class WordleGWindow {
 /** The color used for letters that are missing (a medium gray). */
     public static final Color MISSING_COLOR = new Color(0x999999);
 
+    public static final Color RAINBOW_COLOR_RED = new Color(0xff0000);
+    public static final Color RAINBOW_COLOR_ORANGE = new Color(0xffa500);
+    public static final Color RAINBOW_COLOR_YELLOW = new Color(0xffff00);
+    public static final Color RAINBOW_COLOR_GREEN = new Color(0x008000);
+    public static final Color RAINBOW_COLOR_PURPLE = new Color(0x4b0082);
+    public static final Color WHITE_COLOR = Color.WHITE;
+
 /**
  * Creates a new WordleGWindow object and displays it on the screen.
  */
@@ -57,6 +64,8 @@ public class WordleGWindow {
         frame.pack();
         frame.setVisible(true);
     }
+
+
 
 /**
  * Sets the label from the grid square at the specified row and column.
@@ -177,6 +186,7 @@ public class WordleGWindow {
     private WordleCanvas canvas;
 
 }
+
 
 class WordleCanvas extends JComponent implements KeyListener, MouseListener {
 
