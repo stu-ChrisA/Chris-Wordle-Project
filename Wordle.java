@@ -7,7 +7,6 @@
 
 import edu.willamette.cs1.wordle.WordleDictionary;
 import edu.willamette.cs1.wordle.WordleGWindow;
-import java.util.ArrayList;
 
 public class Wordle {
     private final double FINAL_S_FRACTION = 1.0/3.0;
@@ -27,7 +26,6 @@ public class Wordle {
 
     public void enterAction(String s) { // Checks if the word is in the dictonary, then colors the square boxes/key caps to it's correct color for the guess and then displayed a "you win" message if the user guesses the word correctly
         String userWord = s;
-        //String [] x = new String[5]; change to arrayList
         userWord = userWord.toLowerCase();
         boolean check = false;
         for(String checkWord : WordleDictionary.FIVE_LETTER_WORDS)
@@ -49,8 +47,6 @@ public class Wordle {
         {
             if(gw.getSquareLetter(gw.getCurrentRow(), col).equals(test.substring(col,col+1)))   
             {
-                //x.add();
-                //test = test.replace(gw.getSquareLetter(gw.getCurrentRow(), col), "");
                 gw.setSquareColor(gw.getCurrentRow(), col,  WordleGWindow.CORRECT_COLOR);
                 gw.setKeyColor(gw.getSquareLetter(gw.getCurrentRow(), col), WordleGWindow.CORRECT_COLOR);
             }
@@ -175,23 +171,29 @@ public class Wordle {
             }
         }
 
-        /*gw.setSquareColor(0, 0, WordleGWindow.CORRECT_COLOR);
+        gw.setSquareColor(0, 0, WordleGWindow.WHITE_COLOR);
         gw.setSquareLetter(0, 0, "1");
+        gw.setSquareLetter(0,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowOneGuessAsString());
 
-        gw.setSquareColor(1, 0, WordleGWindow.CORRECT_COLOR);
+        gw.setSquareColor(1, 0, WordleGWindow.WHITE_COLOR);
         gw.setSquareLetter(1, 0, "2"); 
+        gw.setSquareLetter(1,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowTwoGuessAsString());
 
-        gw.setSquareColor(2, 0, WordleGWindow.CORRECT_COLOR);
+        gw.setSquareColor(2, 0, WordleGWindow.WHITE_COLOR);
         gw.setSquareLetter(2, 0, "3"); 
+        gw.setSquareLetter(2,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowThreeGuessAsString());
 
-        gw.setSquareColor(3, 0, WordleGWindow.CORRECT_COLOR);
+        gw.setSquareColor(3, 0, WordleGWindow.WHITE_COLOR);
         gw.setSquareLetter(3, 0, "4"); 
+        gw.setSquareLetter(3,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowOnFourGuessAsString());
 
-        gw.setSquareColor(4, 0, WordleGWindow.CORRECT_COLOR);
+        gw.setSquareColor(4, 0, WordleGWindow.WHITE_COLOR);
         gw.setSquareLetter(4, 0, "5");  
+        gw.setSquareLetter(4,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowFiveGuessAsString());
 
-        gw.setSquareColor(5, 0, WordleGWindow.CORRECT_COLOR);
-        gw.setSquareLetter(5, 0, "6"); */
+        gw.setSquareColor(5, 0, WordleGWindow.WHITE_COLOR);
+        gw.setSquareLetter(5, 0, "6");
+        gw.setSquareLetter(5,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowSixGuessAsString());
 
     }
 
