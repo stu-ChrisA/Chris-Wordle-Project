@@ -33,39 +33,38 @@ public class WordleGuessesPerGainUpdate {
         }
     }
 
-    public static String returnRowOneGuessAsString()
+    public static int returnRowOneGuess()
     {
-        String one = Integer.toString(guessRowOne);
-        return one;
+        return guessRowOne;
 
     }
-    public static String returnRowTwoGuessAsString()
+    public static int returnRowTwoGuess()
     {
-        String two = Integer.toString(guessRowTwo);
+        int two = guessRowTwo;
         return two;
 
     }
-    public static String returnRowThreeGuessAsString()
+    public static int returnRowThreeGuess()
     {
-        String three = Integer.toString(guessRowThree);
+        int three = guessRowThree;
         return three;
 
     }
-    public static String returnRowOnFourGuessAsString()
+    public static int returnRowFourGuess()
     {
-        String four = Integer.toString(guessRowFour);
+        int four = guessRowFour;
         return four;
 
     }
-    public static String returnRowFiveGuessAsString()
+    public static int returnRowFiveGuess()
     {
-        String five = Integer.toString(guessRowFive);
+        int five = guessRowFive;
         return five;
 
     }
-    public static String returnRowSixGuessAsString()
+    public static int returnRowSixGuess()
     {
-        String six = Integer.toString(guessRowSix);
+        int six = guessRowSix;
         return six;
 
     }
