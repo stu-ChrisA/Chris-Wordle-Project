@@ -73,13 +73,12 @@ public class Wordle {
             }
             WordleGuessesPerGainUpdate.updateGuessesEachGame();
             displayGuessesPerGame();
-            gw.showMessage("These are scores for each time you guessed");
+            gw.showMessage("Here are your scores for all games you've played!");
         }
         else{
             updateGuess();
             updateRow();
         }
-
 
 
 
@@ -164,38 +163,113 @@ public class Wordle {
     {
         for(int row = 0; row < WordleGWindow.N_ROWS; row++)
         {
-            for(int col2 = 0; col2 < WordleGWindow.N_COLS; col2++)
+            for(int clearCol = 0; clearCol < WordleGWindow.N_COLS; clearCol++)
             {
-                gw.setSquareColor(row, col2, WordleGWindow.WHITE_COLOR);
-                gw.setSquareLetter(row, col2, ""); 
+                gw.setSquareColor(row, clearCol, WordleGWindow.WHITE_COLOR);
+                gw.setSquareLetter(row, clearCol, ""); 
             }
         }
 
-        gw.setSquareColor(0, 0, WordleGWindow.WHITE_COLOR);
+        //__________________________________________________________
+
+        //Row One:
+        gw.setSquareColor(0, 0, WordleGWindow.CORRECT_COLOR);
         gw.setSquareLetter(0, 0, "1");
-        gw.setSquareLetter(0,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowOneGuessAsString());
+        if(WordleGuessesPerGainUpdate.returnRowOneGuess() > 9)
+        {
+            String RowOneNumToWord2 = Integer.toString(WordleGuessesPerGainUpdate.returnRowOneGuess() % 10);
+            String RowOnenumToWord1 = Integer.toString(WordleGuessesPerGainUpdate.returnRowOneGuess() / WordleGuessesPerGainUpdate.returnRowOneGuess());
+            gw.setSquareLetter(0,3, RowOnenumToWord1);
+            gw.setSquareLetter(0,4, RowOneNumToWord2);
 
-        gw.setSquareColor(1, 0, WordleGWindow.WHITE_COLOR);
+        }
+        else{
+            gw.setSquareLetter(0,4,Integer.toString(WordleGuessesPerGainUpdate.returnRowOneGuess()));
+
+        }
+
+        //__________________________________________________________
+
+        //Row Two:
+        gw.setSquareColor(1, 0, WordleGWindow.CORRECT_COLOR);
         gw.setSquareLetter(1, 0, "2"); 
-        gw.setSquareLetter(1,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowTwoGuessAsString());
+        if(WordleGuessesPerGainUpdate.returnRowTwoGuess() > 9)
+        {
+            String RowTwoNumToWord2 = Integer.toString(WordleGuessesPerGainUpdate.returnRowTwoGuess() % 10);
+            String RowTwonumToWord1 = Integer.toString(WordleGuessesPerGainUpdate.returnRowTwoGuess() / WordleGuessesPerGainUpdate.returnRowTwoGuess());
+            gw.setSquareLetter(1,3,RowTwonumToWord1);
+            gw.setSquareLetter(1,4,RowTwoNumToWord2);
+        }
+        else{
+            gw.setSquareLetter(1,4,Integer.toString(WordleGuessesPerGainUpdate.returnRowTwoGuess()));
+        }
+        
+        //__________________________________________________________
 
-        gw.setSquareColor(2, 0, WordleGWindow.WHITE_COLOR);
+        //Row Three:
+        gw.setSquareColor(2, 0, WordleGWindow.CORRECT_COLOR);
         gw.setSquareLetter(2, 0, "3"); 
-        gw.setSquareLetter(2,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowThreeGuessAsString());
+        if(WordleGuessesPerGainUpdate.returnRowThreeGuess() > 9)
+        {
+            String RowThreeNumToWord2 = Integer.toString(WordleGuessesPerGainUpdate.returnRowThreeGuess() % 10);
+            String RowThreenumToWord1 = Integer.toString(WordleGuessesPerGainUpdate.returnRowThreeGuess() / WordleGuessesPerGainUpdate.returnRowThreeGuess());
+            gw.setSquareLetter(2,3,RowThreenumToWord1);
+            gw.setSquareLetter(2,4,RowThreeNumToWord2);
+        }
+        else{
+            gw.setSquareLetter(2,4,Integer.toString(WordleGuessesPerGainUpdate.returnRowThreeGuess()));
+        }
 
-        gw.setSquareColor(3, 0, WordleGWindow.WHITE_COLOR);
+        //__________________________________________________________
+
+        //Row Four:
+        gw.setSquareColor(3, 0, WordleGWindow.CORRECT_COLOR);
         gw.setSquareLetter(3, 0, "4"); 
-        gw.setSquareLetter(3,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowOnFourGuessAsString());
+        if(WordleGuessesPerGainUpdate.returnRowFourGuess() > 9)
+        {
+            String RowFourNumToWord2 = Integer.toString(WordleGuessesPerGainUpdate.returnRowFourGuess() % 10);
+            String RowFourNumToWord1 = Integer.toString(WordleGuessesPerGainUpdate.returnRowFourGuess() / WordleGuessesPerGainUpdate.returnRowFourGuess());
+            gw.setSquareLetter(3,3,RowFourNumToWord1);
+            gw.setSquareLetter(3,4,RowFourNumToWord2);
+        }
+        else{
+            gw.setSquareLetter(3,4,Integer.toString(WordleGuessesPerGainUpdate.returnRowFourGuess()));
+        }
 
-        gw.setSquareColor(4, 0, WordleGWindow.WHITE_COLOR);
+        //__________________________________________________________
+
+        //Row Five:
+        gw.setSquareColor(4, 0, WordleGWindow.CORRECT_COLOR);
         gw.setSquareLetter(4, 0, "5");  
-        gw.setSquareLetter(4,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowFiveGuessAsString());
+        if(WordleGuessesPerGainUpdate.returnRowFiveGuess() > 9)
+        {
+            String RowFiveNumToWord2 = Integer.toString(WordleGuessesPerGainUpdate.returnRowFiveGuess() % 10);
+            String RowFiveNumToWord1 = Integer.toString(WordleGuessesPerGainUpdate.returnRowFiveGuess() / WordleGuessesPerGainUpdate.returnRowFiveGuess());
+            gw.setSquareLetter(4,3,RowFiveNumToWord1);
+            gw.setSquareLetter(4,4,RowFiveNumToWord2);
+        }
+        else{
+            gw.setSquareLetter(4,4,Integer.toString(WordleGuessesPerGainUpdate.returnRowFiveGuess()));
+        }
 
-        gw.setSquareColor(5, 0, WordleGWindow.WHITE_COLOR);
-        gw.setSquareLetter(5, 0, "6");
-        gw.setSquareLetter(5,WordleGWindow.N_COLS, WordleGuessesPerGainUpdate.returnRowSixGuessAsString());
+        //__________________________________________________________
+
+        //Row Six:
+        gw.setSquareColor(5, 0, WordleGWindow.CORRECT_COLOR);
+        gw.setSquareLetter(5, 0, "6");    
+        if(WordleGuessesPerGainUpdate.returnRowSixGuess() > 9)
+        {
+            String RowSixNumToWord2 = Integer.toString(WordleGuessesPerGainUpdate.returnRowSixGuess() % 10);
+            String RowSixNumToWord1 = Integer.toString(WordleGuessesPerGainUpdate.returnRowSixGuess() / WordleGuessesPerGainUpdate.returnRowSixGuess());
+            gw.setSquareLetter(5,3,RowSixNumToWord1);
+            gw.setSquareLetter(5,4,RowSixNumToWord2);
+        }
+        else{
+            gw.setSquareLetter(5,4,Integer.toString(WordleGuessesPerGainUpdate.returnRowSixGuess()));
+        }
 
     }
+
 
 /* Private instance variables */
 
