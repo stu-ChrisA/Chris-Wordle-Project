@@ -12,7 +12,6 @@ public class Wordle {
     private final double FINAL_S_FRACTION = 1.0/3.0;
     private int randomIndex = (int) (Math.random() * WordleDictionary.FIVE_LETTER_WORDS.length);
     private String answerToWordle = WordleDictionary.FIVE_LETTER_WORDS[randomIndex].toUpperCase();
-    String test = "DROWN"; //tester code
     
     public void run() {
         gw = new WordleGWindow();
@@ -45,12 +44,12 @@ public class Wordle {
 
         for(int col = 0; col < WordleGWindow.N_COLS; col++)
         {
-            if(gw.getSquareLetter(gw.getCurrentRow(), col).equals(test.substring(col,col+1)))   
+            if(gw.getSquareLetter(gw.getCurrentRow(), col).equals(answerToWordle.substring(col,col+1)))   
             {
                 gw.setSquareColor(gw.getCurrentRow(), col,  WordleGWindow.CORRECT_COLOR);
                 gw.setKeyColor(gw.getSquareLetter(gw.getCurrentRow(), col), WordleGWindow.CORRECT_COLOR);
             }
-            else if((test).indexOf(gw.getSquareLetter(gw.getCurrentRow(), col))!=-1)
+            else if((answerToWordle).indexOf(gw.getSquareLetter(gw.getCurrentRow(), col))!=-1)
             {
                 gw.setSquareColor(gw.getCurrentRow(), col,  WordleGWindow.PRESENT_COLOR);
                 gw.setKeyColor(gw.getSquareLetter(gw.getCurrentRow(), col), WordleGWindow.PRESENT_COLOR);
@@ -63,7 +62,7 @@ public class Wordle {
 
         }
 
-        if(userWord.equalsIgnoreCase(test))
+        if(userWord.equalsIgnoreCase(answerToWordle))
         {
             rainbowEffect();
             gw.showMessage("You got the word in " + guesses + " guess.");
